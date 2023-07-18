@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous" />
+  <!-- hover effect -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <!-- our code -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Tsukimi+Rounded&display=swap" rel="stylesheet" />
+
+  <link rel="shortcut icon" type="imagex/png" href="img/logo.png" style="background-color: white; border-radius: 100%;">
+  <title>Clube Bosch</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <img src="img/boschcolors.png" alt="cores bosch" class="img-colors" />
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow">
+      <div class="container-fluid">
+        <div class="nav-boschclub">
+          <a href="" class="nav-boschclub">
+            <img class="logo" src="img/logo.png" alt="logo do clube da bosch" />
+            <span class="navbar-brand fs-4 fw-bold">Clube Bosch</span>
+          </a>
+        </div>
+        <div class="login-structure">
+          <a href="/pagLogin" class="login">
+            <img src="img/perfil.png" alt="img padrão de perfil" class="img-perfil" />
+            <span class="fw-bold login-text">Login colaborador</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Article -->
+  <article>
+    <div class="text-center">
+      <div class="row row-cols-sm-1 row-cols-md-1 row-cols-lg-3 m-5">
+        <div class="col">
+          <div class="titulos">Sobre o Restaurante:</div>
+          <div class="d-flex justify-content-center">
+            <div class="card mt-4 card-sobre">
+              <div class="card-body">
+                <img src="img/Quem-somos.jpg"
+                  style="width: 100%; border-radius: 5px" alt="..." />
+                <h2 class="card-subtitle mb-2" style="margin-top: 10px">
+                  Quem somos?
+                </h2>
+                <span class="card-text text-sobre">
+                  O grupo JR Gastronomia e Eventos atua no Clube Bosch desde
+                  2013. Responsável pelo atendimento da lanchonete e
+                  realização de eventos internos e externos e com uma equipe
+                  sólida e treinada para atender públicos variados, em 2017 o
+                  grupo lançou o Restaurante do Clube e passou a servir buffet
+                  por quilo no almoço, de segunda a sábado.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="titulos sep-titulo">Cardápio:</div>
+
+          <div id="carousel1" class="carousel carousel-dark slide mt-4">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carousel1" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carousel1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+
+            <div class="carousel-inner">
+              <div class="carousel-item active carousel-cardapio">
+                <div class="card card-cardapio">
+                  <div class="card-body body-cardapio">
+                    <h2 class="card-subtitle mb-2">
+                      De segunda a sexta
+                    </h2>
+                    <div class="card-text d-flex justify-content-center">
+                      <div class="dividir1">
+                        15 saladas <br />
+                        Feijão preto<br />
+                        Feijão carioca<br />
+                        Arroz branco<br />
+                        Arroz integral<br />
+                        Arroz Biro Biro<br />
+                        Polenta cremosa<br />
+                        Rondelli<br />
+                        Frango ao molho<br />
+                        Peixe à milanesa<br />
+                        Almôndegas<br />
+                        Carne panela<br />
+                      </div>
+
+                      <div class="dividir2">
+                        Filé de frango<br />
+                        Abobrinha refogada<br />
+                        Lombo suíno<br />
+                        Frango grelhado<br />
+                        Tutu de feijão<br />
+                        Yakissoba<br />
+                        Bolinho<br />
+                        Batata souté<br />
+                        Ovo Frito<br />
+                        Farofa<br />
+                        Pastel
+                      </div>
+                    </div>
+                    <div class="m-5">
+                      <p class="preco">Preço: R$16,90 livre ou R$36,90</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="carousel-item carousel-cardapio">
+                <div class="card card-cardapio">
+                  <div class="card-body body-cardapio">
+                    <h2 class="card-subtitle mb-2">Sábado</h2>
+                    <div class="card-text d-flex justify-content-center">
+                      <div class="dividir1">
+                        15 saladas <br />
+                        Feijão preto<br />
+                        Arroz branco<br />
+                        Arroz com alho<br />
+                        Feijoada completa<br />
+                        Lasanha<br />
+                        Moqueca Baiana<br />
+                        Barreado<br />
+                        Costelinha suína<br />
+                        Feijão Tropeiro<br />
+                        Couve refogada<br />
+                      </div>
+
+                      <div class="dividir2">
+                        Cupim assado<br />
+                        Frango<br />
+                        Linguiça toscana<br />
+                        Torresmo<br />
+                        Espaguete<br />
+                        Farofa<br />
+                        Banana à milanesa<br />
+                        Aipim com bacon<br />
+                        Farinha<br />
+                        Laranja<br />
+                        Pastel
+                      </div>
+                    </div>
+                    <div class="m-5">
+                      <p class="preco">
+                        Preço: R$19,90 livre ou R$39,90 o quilo
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="col">
+          <div class="titulos sep-titulo">Novidades do Clube:</div>
+
+          <div id="carousel2" class="carousel slide mt-4">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carousel2" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carousel2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carousel2" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner">
+              <div class="carousel-item active carousel-novidades">
+                <img src="img/foto1.png" class="d-block" alt="anúncio 1" />
+              </div>
+              <div class="carousel-item carousel-novidades">
+                <img src="img/foto2.png" class="d-block" alt="anúncio 2" />
+              </div>
+              <div class="carousel-item carousel-novidades">
+                <img src="img/foto3.png" class="d-block" alt="anúncio 3" />
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel2" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel2" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer>
+    <div class="footer-centralize">
+      <ul>
+        <li>
+          <a href="https://www.facebook.com/ClubeBoschCuritiba/?locale=pt_BR" class="shadow">
+            <i class="fab fa-facebook fa-lg icon"></i></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/clubeboschcuritiba/" class="shadow">
+            <i class="fab fa-instagram fa-lg icon"></i></a>
+        </li>
+        <li>
+          <a href="https://mailto:contatoclubecuritiba@gmail.com" class="shadow">
+            <i class="far fa-envelope fa-lg icon"></i></a>
+        </li>
+      </ul>
+    </div>
+    <div class="footer-centralize footer-sep">
+      <img src="img/local.png" alt="local" style="width: 20px; margin-right: 5px;">
+      <div class="footer-local">
+        Av. Juscelino Kubitschek de Oliveira, 11800 | CIC - Curitiba / PR
+      </div>
+    </div>
+  </footer>
+
+  <!-- java script bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

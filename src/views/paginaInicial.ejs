@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- hover effect -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <!-- our code -->
+    <link rel="stylesheet" href="/css/paginaInicial.css">
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tsukimi+Rounded&display=swap" rel="stylesheet">
+
+    <link rel="shortcut icon" type="imagex/png" href="img/logo.png" style="background-color: white; border-radius: 100%;">
+    <title>Página Inicial</title>
+</head>
+
+<body>
+    <header>
+        <img src="img/boschcolors.png" alt="cores bosch" class="img-colors">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary shadow">
+            <div class="container-fluid">
+                <div class="nav-boschclub">
+                    <a href="" class="nav-boschclub">
+                        <img class="logo" src="img/logo.png" alt="logo do clube da bosch">
+                        <span class="navbar-brand fs-4 fw-bold">Clube Bosch</span>
+                    </a>
+                </div>
+
+                <div>
+                    <a href="#cardapioNovi" class="navs fw-bold cardNov">Cárdapio/Novidades</a>
+                    <a href="/Logout" class="navs fw-bold">Logout</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Article -->
+    <article>
+        <div class="container text-center" style="margin-top: 8%;">
+            <h1 class="bem-vindo m-5">Bem-vindo <%= NomeColaborador %> !</h1>
+        </div>
+
+        <div class="container">
+            <div class="alert alert-success m-3" role="alert">
+                <h1 class="ImpoAvis">Importante!</h1>
+
+                <p>Em relação a capacidade das churrasqueiras:</p>
+                <ul class="important-warnings">
+                    <li>Passaúna: 150 pessoas</li>
+                    <li>Barigui: 100 pessoas</li>
+                    <li>Jardim Botânico: 50 pessoas</li>
+                    <li>Tanguá e Ópera de Arame: 20 pessoas</li>
+                    <li>Demais churrasqueiras: 30 pessoas (Tingui, Memorial Ucraniano e Museu do Olho)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div>
+            <div class="row row-cols-sm-12 row-cols-md-1 row-cols-lg-3 m-3 justify-content-center">
+                <div class="col">
+                    <!-- RESERVA ESPORTES -->
+                    <div class="card shadow margin-remove">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Reserva para espaço esportivo</h5>
+                            <form action="/pagRegReservaPost" method="post" id="formulario1">
+                                
+                                <input type="" name="TipoColaborador" value="ADM" style="display: none;">
+
+                                <div class="form-floating mb-3">
+                                    <input type="date" class="form-control" id="data1" name="data" placeholder="Data" min="<%= dateToday %>">
+                                    <label for="data1">Data</label>
+                                </div>
+
+                                <br>
+                                
+                                <div class="text-center">
+                                    <label>Escolha o espaço esportivo:</label>
+                                    <select id="esportes" name="esportes">
+                                        <option value="" disabled selected>Selecione:</option>
+                                        <option value="Sintético maior">Sintético maior</option>
+                                        <option value="Sintético menor">Sintético menor</option>
+                                        <option value="Quadra Poliesportiva">Quadra Poliesportiva</option>
+                                        <option value="Suiço">Suiço</option>
+                                        <option value="Campo">Campo</option>
+                                        <option value="Vôlei de praia">Vôlei de praia</option>
+                                        <option value="Tênis">Tênis</option>
+                                    </select>
+                                </div>
+
+                                <br>
+
+                                <div class="text-center">
+                                    <label>Escolha uma das horas disponiveis:</label>
+                                    <select id="hora" name="hora">
+                                            <option disabled selected>Selecione:</option>
+                                            <option value="8:30">8:30</option>
+                                            <option value="9:30">9:30</option>
+                                            <option value="10:30">10:30</option>
+                                            <option value="11:30">11:30</option>
+                                            <option value="12:30">12:30</option>
+                                            <option value="13:30">13:30</option>
+                                            <option value="14:30">14:30</option>
+                                            <option value="15:30">15:30</option>
+                                            <option value="16:30">16:30</option>
+                                            <option value="17:30">17:30</option>
+                                            <option value="18:30">18:30</option>
+                                            <option value="19:30">19:30</option>
+                                            <option value="20:30">20:30</option>
+
+                                    </select>
+                                </div>
+
+                                <div class="container">
+                                    <div class="row ">
+                                        <div class="col d-flex justify-content-center m-3">
+                                            <input type="submit" class="btn btn-success" value="<%= verifyEsportes.length != 0 ? 'Já reservou!' : 'Enviar' %>" <%= verifyEsportes.length != 0 ? 'disabled' : '' %>>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <% if(erro == true) { %>
+                                    <div class="alert alert-danger" role="alert">
+                                        Horário Indisponível!
+                                    </div>
+                                <% } %>
+
+                                <div class="alert alert-danger alert-reserva" id="alert-reserva" role="alert">
+                                    Para fazer uma reserva é necessário inserir todos os campos!
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <!-- RESERVA CHURRASQUEIRAS -->
+                    <div class="card shadow">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Inscrição do sorteio para as churrasqueiras</h5>
+                            <form action="/pagRegSorteioPost" method="post" id="formulario2">
+
+                                <div class="form-floating mb-3">
+                                    <input type="date" class="form-control" id="data2" name="data" placeholder="Data" min="<%= dateToday %>">
+                                    <label for="data">Data</label>
+                                </div>
+
+                                <div class="text-center">
+                                    <label>Escolha a churrasqueira:</label>
+                                    <select id="churrasqueira" name="churrasqueira">
+                                        <option disabled selected>Selecione:</option>
+                                        <option value="Passaúna">Passaúna</option>
+                                        <option value="Barigui">Barigui</option>
+                                        <option value="Jardim Botânico">Jardim Botânico</option>
+                                        <option value="Tanguá">Tanguá</option>
+                                        <option value="Ópera de Arame">Ópera de Arame</option>
+                                        <option value="Tingui">Tingui</option>
+                                        <option value="Memorial Ucraniano">Memorial Ucraniano</option>
+                                        <option value="Museu do Olho">Museu do Olho</option>
+                                    </select>
+                                </div>
+
+                                <div class="container">
+                                    <div class="row ">
+                                        <div class="col d-flex justify-content-center m-3">
+                                            <input type="submit" class="btn btn-success" value="<%= verifyChurrasqueira1.length != 0 || verifyChurrasqueira2 != 0 ? 'Já se inscreveu!' : 'Enviar' %>" <%= verifyChurrasqueira1.length != 0 || verifyChurrasqueira2 != 0 ? 'disabled' : '' %>>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="alert alert-danger alert-churras" id="alert-churras" role="alert">
+                                    Para fazer uma inscrição é necessário inserir todos os campos!
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AVISOS -->
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="alert alert-success m-3 alerta-sep" role="alert">
+                        <h1 class="ImpoAvis">Avisos!</h1>
+                        <br>
+                        <h5>Espaço esportivo:</h5>
+                        <ul class="important-warnings">
+                            <li>Para levar convidados será cobrado um preço específico para cada modalidade de esporte;</li>
+                            <li> Após realizar a reserva entraremos em contato pelo seu email, para
+                            caso queira levar convidados você recebera uma lista para preencher 
+                            com NOME COMPLETO, NÚMERO RG, VEÍCULO e PLACA dos convidados. Desse modo, teremos o 
+                            controle de pessoas para entrada e saída do estabelecimento.</li>
+                        </ul>
+                        <br>
+                        <h5>Churrasqueiras:</h5>
+                        <ul class="important-warnings">
+                            <li>Abrimos os sorteios para todos os mês, por isso fique esperto nas novidades do club;</li>
+                            <li>Apôs a inscrição no sorteio aguarte até 20 dias para entrarmos em contato pelo seu email, 
+                                confirmando se voçê foi sorteado ou não;</li>
+                            <li>Caso o associado não tenha sido sorteado, não é informado que foi contemplado na mesma data;</li>
+                            <li>Caso o associado seja sorteado deverá preencher uma lista de convidados que será enviada por email.
+                                 Além disso, deve ser entregue COMPLETA com 24h de antecedência ao evento;</li>
+                            <li>A equipe da secretaria não é responsável por receber/ acompanhar decorações, bebidas, comidas, 
+                                brinquedos, etc;</li>
+                            <li>O responsável pela churrasqueira deve permanecer durante TODO o evento;</li>
+                            <li>É PROIBIDA A UTILIZAÇÃO DE NARGUILÉ nas dependências do Clube.</li>
+                                
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container text-center">
+            <div class="row row-cols-sm-1 row-cols-md-1 row-cols-lg-2 m-3">
+                <div class="col text-center">
+                    <div  id="cardapioNovi" class="titulos sep-titulo">Cardápio:</div>
+
+                    <div id="carousel1" class="carousel carousel-dark slide">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carousel1" data-bs-slide-to="0" class="active"
+                                aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carousel1" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                        </div>
+
+                        <div class="carousel-inner">
+                            <div class="carousel-item active carousel-cardapio">
+                                <div class="card card-cardapio">
+                                    <div class="card-body body-cardapio">
+                                        <h2 class="card-subtitle mb-2">
+                                            De segunda a sexta
+                                        </h2>
+                                        <div class="card-text d-flex justify-content-center">
+                                            <div class="dividir1">
+                                                15 saladas <br />
+                                                Feijão preto<br />
+                                                Feijão carioca<br />
+                                                Arroz branco<br />
+                                                Arroz integral<br />
+                                                Arroz Biro Biro<br />
+                                                Polenta cremosa<br />
+                                                Rondelli<br />
+                                                Frango ao molho<br />
+                                                Peixe à milanesa<br />
+                                                Almôndegas<br />
+                                                Carne panela<br />
+                                            </div>
+
+                                            <div class="dividir2">
+                                                Filé de frango<br />
+                                                Abobrinha refogada<br />
+                                                Lombo suíno<br />
+                                                Frango grelhado<br />
+                                                Tutu de feijão<br />
+                                                Yakissoba<br />
+                                                Bolinho<br />
+                                                Batata souté<br />
+                                                Ovo Frito<br />
+                                                Farofa<br />
+                                                Pastel
+                                            </div>
+                                        </div>
+                                        <div class="m-5">
+                                            <p class="preco">Preço: R$16,90 livre ou R$36,90</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="carousel-item carousel-cardapio">
+                                <div class="card card-cardapio">
+                                    <div class="card-body body-cardapio">
+                                        <h2 class="card-subtitle mb-2">Sábado</h2>
+                                        <div class="card-text d-flex justify-content-center">
+                                            <div class="dividir1">
+                                                15 saladas <br />
+                                                Feijão preto<br />
+                                                Arroz branco<br />
+                                                Arroz com alho<br />
+                                                Feijoada completa<br />
+                                                Lasanha<br />
+                                                Moqueca Baiana<br />
+                                                Barreado<br />
+                                                Costelinha suína<br />
+                                                Feijão Tropeiro<br />
+                                                Couve refogada<br />
+                                            </div>
+
+                                            <div class="dividir2">
+                                                Cupim assado<br />
+                                                Frango<br />
+                                                Linguiça toscana<br />
+                                                Torresmo<br />
+                                                Espaguete<br />
+                                                Farofa<br />
+                                                Banana à milanesa<br />
+                                                Aipim com bacon<br />
+                                                Farinha<br />
+                                                Laranja<br />
+                                                Pastel
+                                            </div>
+                                        </div>
+                                        <div class="m-5">
+                                            <p class="preco">
+                                                Preço: R$19,90 livre ou R$39,90 o quilo
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel1"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel1"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col text-center">
+
+                    <div class="titulos sep-titulo novidades-sep">Novidades do Clube:</div>
+
+                    <div id="carousel2" class="carousel slide mt-4">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carousel2" data-bs-slide-to="0" class="active"
+                                aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carousel2" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carousel2" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                        </div>
+                        
+                        <div class="carousel-inner">
+                            <div class="carousel-item active carousel-novidades">
+                                <img src="img/foto1.png" class="d-block" alt="anúncio 1" />
+                            </div>
+                            <div class="carousel-item carousel-novidades">
+                                <img src="img/foto2.png" class="d-block" alt="anúncio 2" />
+                            </div>
+                            <div class="carousel-item carousel-novidades">
+                                <img src="img/foto3.png" class="d-block" alt="anúncio 3" />
+                            </div>
+                        </div>
+
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carousel2"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carousel2"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- FOOTER -->
+    <br><br>
+    <footer>
+        <div class="footer-centralize">
+            <ul>
+            <li>
+                <a href="https://www.facebook.com/ClubeBoschCuritiba/?locale=pt_BR" class="shadow">
+                <i class="fab fa-facebook fa-lg icon"></i></a>
+            </li>
+            <li>
+                <a href="https://www.instagram.com/clubeboschcuritiba/" class="shadow">
+                    <i class="fab fa-instagram fa-lg icon"></i></a>
+            </li>
+            <li>
+                <a href="https://mailto:contatoclubecuritiba@gmail.com" class="shadow">
+                <i class="far fa-envelope fa-lg icon"></i></a>
+            </li>
+            </ul>
+        </div>
+        <div class="footer-centralize footer-sep">
+            <img src="img/local.png" alt="local" style="width: 20px; margin-right: 5px;">
+            <div class="footer-local">
+                Av. Juscelino Kubitschek de Oliveira, 11800 | CIC - Curitiba / PR
+            </div>
+        </div>
+    </footer>
+
+
+        <!-- java script bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+            crossorigin="anonymous"></script>
+
+        <!-- nosso javascript -->
+        <script src="/js/blockfields.js"></script>
+        <script src="/js/verifyfields.js"></script>
+        <script src="/js/changeselect.js"></script>
+        <script src="/path/to/date-and-time.min.js"></script>
+</body>
+
+
+</html>
