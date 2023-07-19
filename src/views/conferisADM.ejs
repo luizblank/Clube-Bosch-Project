@@ -50,21 +50,23 @@
                 <h1 class="controle">Controle das reservas</h1>
             </div>
 
-            <div class="row alignment">
-                <div class="list-group escolha">
-                    <form action="/selectReservaPost" method="post">
-                        <input class="churras-none" name="Reserva" value="Esporte">
-                        <input type="submit" class="list-group-item list-group-item-action list-group-item-success" value="Reservas Esportes">
-                    </form>
+            <% if(dadosReservas.length > 0){ %>
+                <div class="row alignment">
+                    <div class="list-group escolha">
+                        <form action="/selectReservaPost" method="post">
+                            <input class="churras-none" name="Reserva" value="Esporte">
+                            <input type="submit" class="list-group-item list-group-item-action list-group-item-success" value="Reservas Esportes">
+                        </form>
+                    </div>
+                    
+                    <div class="list-group escolha">
+                        <form action="/selectReservaPost" method="post">
+                            <input class="churras-none" name="Reserva" value="Churrasqueira">
+                            <input type="submit" class="list-group-item list-group-item-action list-group-item-success" value="Reservas Churrasqueira">
+                        </form>
+                    </div>
                 </div>
-                
-                <div class="list-group escolha">
-                    <form action="/selectReservaPost" method="post">
-                        <input class="churras-none" name="Reserva" value="Churrasqueira">
-                        <input type="submit" class="list-group-item list-group-item-action list-group-item-success" value="Reservas Churrasqueira">
-                    </form>
-                </div>
-            </div>
+            <% } %>
 
             <div class="row">
                 <% if(dadosReservas.length <= 0){ %>
